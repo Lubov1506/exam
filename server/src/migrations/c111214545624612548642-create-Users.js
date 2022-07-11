@@ -34,7 +34,9 @@ module.exports = {
           unique: true
         },
         avatar: {
-          type: Sequelize.STRING
+          type: Sequelize.STRING,
+          allowNull: false,
+          defaultValue: 'anon.png',
         },
         role: {
           type: Sequelize.ENUM(...Object.values(ROLES)),

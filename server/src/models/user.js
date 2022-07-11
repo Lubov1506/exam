@@ -42,7 +42,9 @@ module.exports = (sequelize, DataTypes) => {
         unique: true
       },
       avatar: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: 'anon.png',
       },
       role: {
         type: DataTypes.ENUM(...Object.values(ROLES)),
