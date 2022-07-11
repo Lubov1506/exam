@@ -3,11 +3,10 @@ const { ROLES } = require('../constants')
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    static associate ({ Offer, Contest, Rating, RefreshToken }) {
+    static associate ({ Offer, Contest, Rating }) {
       User.hasMany(Offer, { foreignKey: 'userId', targetKey: 'id' })
       User.hasMany(Contest, { foreignKey: 'userId', targetKey: 'id' })
       User.hasMany(Rating, { foreignKey: 'userId', targetKey: 'id' })
-      User.hasMany(RefreshToken, { foreignKey: 'userId' })
     }
   }
 
