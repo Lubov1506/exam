@@ -7,7 +7,7 @@ class WebSocket{
   }
 
   listen () {
-    this.io.on(CONSTANTS.SOCKET_CONNECTION, (socket) => {
+    this.io.on(CONSTANTS.SOCKET_TYPES.CONNECTION, (socket) => {
       this.onSubscribe(socket);
       this.onUnsubscribe(socket);
       this.anotherSubscribes(socket);
@@ -19,13 +19,13 @@ class WebSocket{
   }
 
   onSubscribe (socket) {
-    socket.on(CONSTANTS.SOCKET_SUBSCRIBE, (id) => {
+    socket.on(CONSTANTS.SOCKET_TYPES.SUBSCRIBE, (id) => {
       socket.join(id);
     });
   }
 
   onUnsubscribe (socket) {
-    socket.on(CONSTANTS.SOCKET_UNSUBSCRIBE, (id) => {
+    socket.on(CONSTANTS.SOCKET_TYPES.UNSUBSCRIBE, (id) => {
       socket.leave(id);
     });
   }
