@@ -1,49 +1,59 @@
+const {OFFER_STATUSES} = require('../constants')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Offers', {
+    return queryInterface.createTable('offers', {
       id: {
-        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
       userId: {
+        field: 'user_id',
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'Users',
+          model: 'users',
           key: 'id',
         },
       },
       contestId: {
+        field: 'contest_id',
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'Contests',
+          model: 'contests',
           key: 'id',
         },
       },
       text: {
         type: Sequelize.STRING,
-        allowNull: true,
       },
       fileName: {
+        field: 'file_name',
         type: Sequelize.STRING,
-        allowNull: true,
       },
       originalFileName: {
+        field: 'original_file_name',
         type: Sequelize.STRING,
-        allowNull: true,
       },
       status: {
-        type: Sequelize.STRING,
-        allowNull: true,
-        defaultValue: 'pending',
+        type: Sequelize.ENUM(Object.values(OFFER_STATUSES)),
+        defaultValue: OFFER_STATUSES.PENDING,
       },
+      createdAt: {
+        field: 'created_at',
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
+      },
+      updatedAt: {
+        field: 'updated_at',
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
+      }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Offers');
+    return queryInterface.dropTable('offers');
   },
 };
