@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import styles from './Header.module.sass';
 import CONSTANTS from '../../constants';
-import { getUserAction, clearUserStore, headerRequest } from '../../actions/actionCreator';
+import { clearUserStore, headerRequest } from '../../actions/actionCreator';
 
 class Header extends React.Component {
   componentDidMount() {
@@ -55,7 +55,7 @@ class Header extends React.Component {
                 
                   <Link to="/" style={{ textDecoration: 'none' }}><li><span>Affiliate Dashboard</span>  </li></Link>
               
-               <Link onClick={this.logOut} > <li><span >Logout</span></li></Link>
+               <Link onClick={this.logOut} to=''> <li><span >Logout</span></li></Link>
               </ul>
             </div>
             <img src={`${CONSTANTS.STATIC_IMAGES_PATH}email.png`} className={styles.emailIcon} alt="email" />
