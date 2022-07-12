@@ -35,27 +35,27 @@ class Header extends React.Component {
               <span>{`Hi, ${this.props.data.displayName}`}</span>
               <img src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`} alt="menu" />
               <ul>
-                <li>
+                
                   <Link
                     to="/dashboard"
                     style={{ textDecoration: 'none' }}
-                  >
+                  ><li>
                     <span>View Dashboard</span>
-                  </Link>
-                </li>
-                <li><Link to="/account" style={{ textDecoration: 'none' }}><span>My Account</span></Link></li>
-                <li>
+                 </li> </Link>
+                
+                <Link to="/account" style={{ textDecoration: 'none' }}><li><span>My Account</span></li></Link>
+               
                   <Link
                     to="/"
                     style={{ textDecoration: 'none' }}
-                  >
+                  > <li>
                     <span>Messages</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" style={{ textDecoration: 'none' }}><span>Affiliate Dashboard</span></Link>
-                </li>
-                <li><span onClick={this.logOut}>Logout</span></li>
+                </li>  </Link>
+                
+                
+                  <Link to="/" style={{ textDecoration: 'none' }}><li><span>Affiliate Dashboard</span>  </li></Link>
+              
+               <Link onClick={this.logOut} > <li><span >Logout</span></li></Link>
               </ul>
             </div>
             <img src={`${CONSTANTS.STATIC_IMAGES_PATH}email.png`} className={styles.emailIcon} alt="email" />
@@ -107,13 +107,13 @@ class Header extends React.Component {
                       alt="menu"
                     />
                     <ul>
-                      <li><a href="/">Beauty</a></li>
-                      <li><a href="/">Consulting</a></li>
-                      <li><a href="/">E-Commerce</a></li>
-                      <li><a href="/">Fashion & Clothing</a></li>
-                      <li><a href="/">Finance</a></li>
-                      <li><a href="/">Real Estate</a></li>
-                      <li><a href="/">Tech</a></li>
+                      <a href="/"><li>Beauty</li></a>
+                      <a href="/"><li>Consulting</li></a>
+                      <a href="/"><li>E-Commerce</li></a>
+                      <a href="/"><li>Fashion & Clothing</li></a>
+                      <a href="/"><li>Finance</li></a>
+                      <a href="/"><li>Real Estate</li></a>
+                      <a href="/"><li>Tech</li></a>
                       <li className={styles.last}>
                         <a href="/">More Categories</a>
                       </li>
@@ -126,12 +126,12 @@ class Header extends React.Component {
                       alt="menu"
                     />
                     <ul>
-                      <li><a href="/">HOW IT WORKS</a></li>
-                      <li><a href="/">PRICING</a></li>
-                      <li><a href="/">AGENCY SERVICE</a></li>
-                      <li><a href="/">ACTIVE CONTESTS</a></li>
-                      <li><a href="/">WINNERS</a></li>
-                      <li><a href="/">LEADERBOARD</a></li>
+                      <a href="/"><li>HOW IT WORKS</li></a>
+                      <a href="/"><li>PRICING</li></a>
+                      <a href="/"><li>AGENCY SERVICE</li></a>
+                      <a href="/"><li>ACTIVE CONTESTS</li></a>
+                      <a href="/"><li>WINNERS</li></a>
+                      <a href="/"><li>LEADERBOARD</li></a>
                       <li className={styles.last}>
                         <a href="/">
                             BECOME A
@@ -147,9 +147,9 @@ class Header extends React.Component {
                       alt="menu"
                     />
                     <ul>
-                      <li><a href="/">NAMES</a></li>
-                      <li><a href="/">TAGLINES</a></li>
-                      <li><a href="/">LOGOS</a></li>
+                      <a href="/"><li>NAMES</li></a>
+                      <a href="/"><li>TAGLINES</li></a>
+                      <a href="/"><li>LOGOS</li></a>
                       <li className={styles.last}>
                         <a href="/">TESTIMONIALS</a>
                       </li>
@@ -159,11 +159,11 @@ class Header extends React.Component {
                     <span>Names For Sale</span>
                     <img src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`} alt="menu" />
                     <ul>
-                      <li><a href="/">POPULAR NAMES</a></li>
-                      <li><a href="/">SHORT NAMES</a></li>
-                      <li><a href="/">INTRIGUING NAMES</a></li>
-                      <li><a href="/">NAMES BY CATEGORY</a></li>
-                      <li><a href="/">VISUAL NAME SEARCH</a></li>
+                      <a href="/"><li>POPULAR NAMES</li></a>
+                      <a href="/"><li>SHORT NAMES</li></a>
+                      <a href="/"><li>INTRIGUING NAMES</li></a>
+                      <a href="/"><li>NAMES BY CATEGORY</li></a>
+                      <a href="/"><li>VISUAL NAME SEARCH</li></a>
                       <li className={styles.last}>
                         <a href="/">
                             SELL YOUR
@@ -179,9 +179,9 @@ class Header extends React.Component {
                       alt="menu"
                     />
                     <ul>
-                      <li><a href="/">ULTIMATE NAMING GUIDE</a></li>
-                      <li><a href="/">POETIC DEVICES IN BUSINESS NAMING</a></li>
-                      <li><a href="/">CROWDED BAR THEORY</a></li>
+                      <a href="/"><li>ULTIMATE NAMING GUIDE</li></a>
+                      <a href="/"><li>POETIC DEVICES IN BUSINESS NAMING</li></a>
+                      <a href="/"><li>CROWDED BAR THEORY</li></a>
                       <li className={styles.last}>
                         <a href="/">ALL ARTICLES</a>
                       </li>
