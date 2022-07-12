@@ -15,7 +15,7 @@ const SliderBar = (props) => {
     lazyLoad: true,
   };
 
-  const getStyleName = () => {
+  const getStyleName = (state = options) => {
     const { carouselType } = props;
     switch (carouselType) {
       case carouselConstants.MAIN_SLIDER:
@@ -24,10 +24,16 @@ const SliderBar = (props) => {
         return style.exampleCarousel;
       case carouselConstants.FEEDBACK_SLIDER:
         return style.feedbackCarousel;
+      default: return state
     }
   };
 
-  const renderSlides = () => {
+  const initProps = {
+    src: '',
+    alt: '',
+    key: ''
+  }
+  const renderSlides = (state = initProps) => {
     const { carouselType } = props;
     switch (carouselType) {
       case carouselConstants.MAIN_SLIDER: {
@@ -58,6 +64,7 @@ const SliderBar = (props) => {
           </div>
         ));
       }
+      default: return state
     }
   };
   return (

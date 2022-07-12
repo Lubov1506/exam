@@ -28,9 +28,13 @@ const variableOptions = {
     typeOfTagline: '',
   },
 };
+  const initState ={
+    characteristic1:'',
+    characteristic2:'',
+  }
 
 class ContestForm extends React.Component {
-    getPreference = () => {
+    getPreference = (state = initState) => {
       const { contestType } = this.props;
       switch (contestType) {
         case CONSTANTS.NAME_CONTEST: {
@@ -48,6 +52,7 @@ class ContestForm extends React.Component {
           this.props.getData({ characteristic1: 'brandStyle' });
           break;
         }
+        default: return state
       }
     }
 
