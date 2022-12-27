@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING
       },
       status: {
-        type: DataTypes.ENUM(Object.values(OFFER_STATUSES)),
+        type: DataTypes.ENUM(...Object.values(OFFER_STATUSES)),
         defaultValue: OFFER_STATUSES.PENDING
       },
       createdAt: {

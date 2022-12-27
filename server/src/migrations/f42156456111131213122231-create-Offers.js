@@ -38,7 +38,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       status: {
-        type: Sequelize.ENUM(Object.values(OFFER_STATUSES)),
+        type: Sequelize.ENUM(...Object.values(OFFER_STATUSES)),
         defaultValue: OFFER_STATUSES.PENDING,
       },
       createdAt: {
